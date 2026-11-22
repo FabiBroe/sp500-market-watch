@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f6f6f1">
+<title>Market Watch · Marktboden-Wächter</title>
+<style>
+:root{color-scheme:light;--paper:#f5f5f0;--card:#fffffc;--ink:#172925;--muted:#52665d;--line:#d8ded4;--green:#13654f;--light:#e2eee4;--gold:#937018;--amber:#c2871c;--red:#a84d36;--deep:#153a31;--serif:Georgia,"Times New Roman",serif;--sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}button,select{font:inherit}a{color:var(--green);text-underline-offset:3px}button,a,select,summary{touch-action:manipulation}button,select,summary{cursor:pointer}button{color:inherit}button:focus-visible,select:focus-visible,a:focus-visible,summary:focus-visible,svg:focus-visible{outline:3px solid #d39b31;outline-offset:3px}h1,h2,h3,p{margin:0}h1,h2,h3{text-wrap:balance}svg{display:block}.wrap{width:min(1260px,calc(100% - 80px));margin:0 auto}.mast{border-bottom:1px solid var(--line);background:var(--card)}.mast-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}.identity{display:flex;align-items:center;gap:10px;font-weight:740;letter-spacing:-.045em;font-size:23px}.brandmark{position:relative;display:inline-flex;align-items:flex-end;gap:2px;justify-content:center;width:31px;height:31px;background:var(--deep);border-radius:7px;padding:8px 6px}.brandmark i{width:3px;border-radius:2px;background:#c0d39c}.brandmark i:nth-child(1){height:7px}.brandmark i:nth-child(2){height:12px}.brandmark i:nth-child(3){height:9px}.brandmark i:nth-child(4){height:17px}.nav{display:flex;align-items:center;gap:23px}.nav a{text-decoration:none;color:var(--muted);font-size:13px;font-weight:600}.nav a:hover,.foot a:hover{color:var(--ink);text-decoration:underline}.nav .refresh{display:inline-flex;gap:7px;align-items:center;background:#edf2e8;border:1px solid #d6e0d2;border-radius:5px;padding:7px 12px;color:var(--deep)}[hidden]{display:none!important}.intro{padding:32px 0 24px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px}.eyebrow,.smallhead{text-transform:uppercase;letter-spacing:.125em;font-weight:740;font-size:10px;line-height:1.4;color:var(--muted)}h1{font:normal clamp(34px,4.5vw,57px)/1.07 var(--serif);letter-spacing:-.045em;margin:5px 0 7px}.subtitle,.subtle,.explainer,.state-desc,.rule-name small{color:var(--muted)}.subtitle{font-size:15px}.fresh{flex:none;display:flex;gap:9px;align-items:center;font-size:12px;font-weight:650;margin-bottom:5px;padding:7px 12px;border-radius:99px;background:#e3ede3;border:1px solid #c9d9ca;color:#28533d}.fresh::before{content:"";width:7px;height:7px;border-radius:50%;background:#528263}.fresh.bad{background:#fbebc9;border-color:#ead3a4;color:#72500d}.fresh.bad::before{background:#9b701c}.notice{margin-bottom:16px;padding:12px 16px;border-left:3px solid #aa7b28;background:#fbf0d8;color:#684e1c;font-size:14px}.overview{display:grid;grid-template-columns:minmax(250px,.83fr) minmax(0,1.8fr);gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:11px;min-width:0}.scorecard{display:flex;flex-direction:column;position:relative;isolation:isolate;overflow:hidden;border-radius:11px;background:var(--deep);padding:24px 25px 22px;color:#f8faf2;min-height:330px}.scorecard .smallhead{color:#b6cdbe}.score{font:normal clamp(68px,8vw,98px)/1 var(--serif);letter-spacing:-.075em;display:flex;align-items:baseline;gap:8px;margin-top:15px;font-variant-numeric:lining-nums tabular-nums}.score span+span{font:normal 30px/1 var(--serif);letter-spacing:-.035em;color:#b7c9ba}.meter{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;margin:14px 0 19px}.meter span{height:6px;border-radius:2px;background:#446254}.meter .on{background:#d4ce88}.meter .unknown{background:repeating-linear-gradient(120deg,#708679 0 2px,#446254 2px 5px)}.scorecard h2{font:normal clamp(22px,2.3vw,30px)/1.15 var(--serif);letter-spacing:-.03em;margin-bottom:7px}.scorecard p{font-size:14px;line-height:1.45;color:#d9e5db}.score-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:8px;border-top:1px solid #466659;margin-top:auto;padding-top:12px;color:#c2d3c8;font-size:12px}.score-foot strong{font-family:var(--mono);color:#eff6e8;font-size:13px}.scorebody{padding-bottom:20px}.chartcard{padding:21px 22px 13px;display:flex;flex-direction:column}.panelhead,.row-between{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.panelhead h2,.sectionhead h2,.methods h2{font:normal 29px/1.16 var(--serif);letter-spacing:-.035em}.panelhead .smallhead{margin-bottom:4px}.tabs{display:inline-flex;gap:2px;padding:3px;background:#eef1e9;border:1px solid #dfe5da;border-radius:6px;flex:none}.tabs button{border:0;min-width:32px;padding:4px 7px;background:transparent;border-radius:3px;font-size:12px;font-weight:650;color:var(--muted)}.tabs button[aria-pressed=true]{background:var(--card);color:var(--deep);box-shadow:0 1px 3px #17352925}.chartbox{height:206px;position:relative;margin-top:5px}.chartbox svg{width:100%;height:100%;overflow:visible}.chart-empty{position:absolute;inset:25% 10px auto;text-align:center;color:var(--muted);font-size:14px}.quote{display:flex;gap:7px;align-items:baseline;font-variant-numeric:tabular-nums}.quote b{font:650 19px/1.4 var(--sans);letter-spacing:-.04em}.quote small{font-size:11px;color:var(--muted)}.charttools{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.legend{display:flex;flex-wrap:wrap;gap:6px 13px;color:var(--muted);font-size:11px}.legend span{display:inline-flex;align-items:center;gap:5px}.sma-key{width:13px;height:1px;border-top:1px dashed #6e7e77}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--amber)}.dot.washout{background:var(--red)}.dot.recovery{background:var(--green);border-radius:1px;transform:rotate(45deg)}.eventselect{color:var(--ink);max-width:100%;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:4px;padding:4px 6px;font-size:11px}.inspect{font-size:12px;color:var(--muted);min-height:19px;margin-top:7px}.inspect strong{color:var(--ink)}.grid2{display:grid;grid-template-columns:minmax(0,1.43fr) minmax(0,1fr);gap:18px;margin-top:18px}.inset{padding:22px 23px}.panelhead p,.sectionhead p,.explainer{font-size:13px;margin-top:5px;color:var(--muted)}.rules{margin:16px 0 0}.rule{display:grid;grid-template-columns:21px minmax(0,1fr) auto;gap:9px;align-items:center;border-top:1px solid var(--line);padding:9px 0}.rule:last-child{padding-bottom:0}.flag{display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;border-radius:50%;color:#68746a;background:#e8ece5;font:700 12px/1 var(--sans)}.flag.on{color:#176447;background:#d5e9da}.flag.unknown{color:#84600f;background:#f6e9c6}.rule-name,.asset-name{font-size:14px;font-weight:650;line-height:1.35}.rule-name small,.asset-name small{display:block;font-size:11px;font-weight:450;line-height:1.45}.rule-value,.asset-value,.num{font-family:var(--mono);font-variant-numeric:tabular-nums;letter-spacing:-.04em;font-size:13px;white-space:nowrap}.signal-tag{color:var(--green);font-size:11px;font-weight:700;border-radius:4px;background:var(--light);padding:4px 7px;white-space:nowrap}.trend-status{margin-top:16px;padding:12px 14px;background:#eef2e9;border-radius:5px;border-left:3px solid #8fa78e}.trend-status h3{font-size:14px;line-height:1.35}.trend-status p{font-size:12px;color:var(--muted);margin-top:4px}.assets{margin:14px 0 0}.asset{display:grid;grid-template-columns:15px minmax(76px,1fr) auto;align-items:center;column-gap:8px;padding:9px 0;border-bottom:1px solid var(--line)}.asset:last-child{border-bottom:0}.asset-status{font-size:13px;font-weight:bold;color:var(--green);text-align:center}.asset-status.below{color:var(--red)}.asset-status.na{color:var(--muted)}.asset-name small{color:var(--muted)}.asset-value{text-align:right}.asset-value small{display:block;font:11px var(--sans);color:var(--muted);margin-top:3px}.trend-foot{margin-top:13px;font-size:12px;color:var(--muted)}.section{margin-top:19px}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:14px}.scroll{overflow:auto;-webkit-overflow-scrolling:touch;margin-top:15px}table{border-collapse:collapse;width:100%;font-size:13px}th,td{padding:9px 11px;text-align:right;border-bottom:1px solid #dce2d8;white-space:nowrap}th{font-size:11px;color:var(--muted);font-weight:650;line-height:1.4;background:#f2f4ed}th:first-child,td:first-child{text-align:left}tbody tr:last-child td{border-bottom:0}tbody tr:hover{background:#f4f7f0}td:not(:first-child){font-family:var(--mono);letter-spacing:-.035em}.pos{color:var(--green)}.neg{color:#944b37}details{margin-top:12px}summary{color:var(--green);font-size:13px;font-weight:600;width:fit-content;padding:3px 0}.archive-top{margin:12px 0 0;color:var(--muted);font-size:12px}.archive .scroll{max-height:380px}.context-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}.context-tile{border-top:1px solid var(--line);padding:11px 5px 5px 0}.context-tile h3{font-size:13px;font-weight:600}.context-tile b{font:normal 24px/1.3 var(--serif)}.context-tile p{font-size:11px;color:var(--muted)}.context-num{display:flex;align-items:center;gap:12px}.spark{max-width:90px;width:45%;height:26px}.methods{margin:19px 0 0}.methods details{margin-top:0}.methods summary{font-weight:620;font-size:14px}.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0 0}.method-grid h3{font-size:13px;margin-bottom:4px}.method-grid p,.source-list{font-size:13px;color:var(--muted);margin:0}.source-list{list-style:none;padding:0}.foot{padding:17px 0 28px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:11px;color:var(--muted)}.foot a{color:inherit;text-decoration:none}.muted{color:var(--muted)}.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+@media(max-width:960px){.wrap{width:calc(100% - 40px)}.overview{grid-template-columns:minmax(230px,.76fr) minmax(0,1.6fr)}.inset{padding:19px 17px}.scorecard{padding:20px}.chartcard{padding:18px 14px 12px}.grid2{grid-template-columns:1.22fr 1fr}.nav{gap:15px}}
+@media(max-width:720px){.wrap{width:calc(100% - 28px)}.mast-inner{min-height:53px}.identity{font-size:20px}.brandmark{width:27px;height:27px;padding:6px 5px}.nav>a:not(.refresh){display:none}.intro{display:block;padding:23px 0 17px}.fresh{display:inline-flex;margin:10px 0 0;padding:4px 9px}.overview,.grid2{grid-template-columns:1fr;gap:12px}.scorecard{min-height:0;display:grid;grid-template-columns:minmax(100px,.62fr) minmax(0,1.38fr);gap:0 14px;padding:17px 18px}.scorecard>.smallhead{grid-column:1/-1}.score{font-size:65px;margin-top:5px}.score span+span{font-size:24px}.meter{align-self:end;grid-column:1;grid-row:3;margin:0 0 4px;gap:3px}.meter span{height:5px}.scorebody{align-self:center;grid-column:2;grid-row:2/4;padding:5px 0 0}.scorecard h2{font-size:22px}.scorecard p{font-size:12px}.score-foot{grid-column:1/-1;margin-top:12px;padding-top:8px}.grid2,.section,.methods{margin-top:12px}.chartbox{height:202px}.chartcard{padding:16px 13px 12px}.panelhead h2,.sectionhead h2{font-size:25px}.sectionhead{display:block}.inset{padding:17px 15px}.context-tiles{grid-template-columns:1fr 1fr}.method-grid{grid-template-columns:1fr}.foot{align-items:flex-start;flex-direction:column;gap:5px}.panelhead .smallhead{margin-bottom:2px}.notice{font-size:12px}.section .explainer{font-size:12px}}
+@media(max-width:360px){.wrap{width:calc(100% - 20px)}.charttools{gap:5px}.tabs button{min-width:27px;padding:3px 4px}.scorecard{grid-template-columns:85px 1fr}.rule{gap:5px;grid-template-columns:18px 1fr auto}.rule-value{font-size:11px}}
+@media print{body{background:#fff}.wrap{width:100%}.nav,.tabs,.eventselect,.foot a,.refresh{display:none!important}.overview,.grid2{display:block}.card,.scorecard{break-inside:avoid;margin-bottom:10px}.scorecard{background:white;color:var(--ink);border:1px solid var(--line);min-height:auto}.scorecard .smallhead,.scorecard p,.score span+span,.score-foot,.score-foot strong{color:var(--ink)}.chartbox{height:200px}.scroll{overflow:visible}details>*{display:block}}
+__CONTEXT_STYLE__
+</style>
+</head>
+<body>
+<header class="mast"><div class="mast-inner wrap"><div class="identity"><span class="brandmark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Market Watch</div><nav class="nav" aria-label="Abschnitte"><a href="#regeln">Signale</a><a href="#context">34 Indikatoren</a><a href="#historie">Historie</a><a id="method-link" href="#methodik">Methodik</a><a class="refresh" id="refresh" href="/refresh" hidden>Daten aktualisieren <span aria-hidden="true">↻</span></a></nav></div></header>
+<main class="wrap">
+<div class="intro"><div><div class="eyebrow">US-Aktienmarkt · Tagesschluss</div><h1>Marktboden-Wächter</h1><p class="subtitle">Verkaufsdruck und anschließende Erholung im S&amp;P 500.</p></div><div id="fresh" class="fresh bad">Datenstand offen</div></div>
+<div id="notice" class="notice" hidden></div>
+<div class="overview">
+<section class="scorecard" aria-labelledby="status-title"><div class="smallhead">Washout-Score</div><div class="score"><span id="score">–</span><span>/ 6</span></div><div id="meter" class="meter" aria-hidden="true"></div><div class="scorebody"><h2 id="status-title">Keine Auswertung</h2><p id="status-desc"></p></div><div class="score-foot"><span>Schwelle für einen Washout</span><strong>4 / 6</strong></div></section>
+<section class="card chartcard" aria-labelledby="chart-title"><div class="panelhead"><div><h2 id="chart-title">Kurs und Signale</h2><div class="quote"><b id="quote">–</b><small>S&amp;P 500 · Punkte</small></div></div><div role="group" class="tabs" aria-label="Zeitraum" id="ranges"><button data-range="1" aria-pressed="true" type="button">1 J</button><button data-range="5" aria-pressed="false" type="button">5 J</button><button data-range="all" aria-pressed="false" type="button">Alle</button></div></div>
+<div class="chartbox"><svg id="chart" role="img" aria-label="S&amp;P 500 mit historischen Signalen. Mit Pfeiltasten durch Handelstage navigieren." tabindex="0"></svg><div class="chart-empty" id="chart-empty" hidden>Für diesen Zeitraum liegen keine Schlusskurse vor.</div></div>
+<div class="charttools"><div class="legend" aria-label="Legende"><span><i class="sma-key"></i>SMA200</span><span><i class="dot"></i>Beobachtung</span><span><i class="dot washout"></i>Washout</span><span><i class="dot recovery"></i>Erholung</span></div><label><span class="visually-hidden">Historisches Signal auswählen</span><select class="eventselect" id="eventpick"><option value="">Signal auswählen</option></select></label></div><div class="inspect" id="inspector" aria-live="polite"></div></section>
+</div>
+<div class="grid2"><section id="regeln" class="card inset"><div class="panelhead"><div><h2>Die sechs Bedingungen</h2><p>Jede erfüllte Regel zählt einen Punkt.</p></div></div><div class="rules" id="rules"></div></section>
+<section class="card inset"><div class="panelhead"><div><h2>Trendbestätigung</h2><p>Schlusskurs über dem eigenen 200-Tage-Schnitt.</p></div><span id="trend-count" class="signal-tag">– / 3</span></div><div class="trend-status"><h3 id="trend-title">Trenddaten fehlen</h3><p id="trend-desc"></p></div><div class="assets" id="assets"></div><p class="trend-foot" id="trend-foot"></p></section></div>
+<section id="historie" class="card inset section"><div class="sectionhead"><div><h2>Was folgte auf frühere Signale?</h2><p>Veränderung des S&amp;P 500 ab dem Schlusskurs am Signaltag.</p></div></div>
+<div class="scroll"><table aria-label="Historische Signalstatistik"><thead><tr><th>Signal</th><th>Episoden</th><th>21 Tage<br>Median</th><th>21 Tage<br>im Plus¹</th><th>63 Tage<br>Median</th><th>63 Tage<br>im Plus¹</th><th>Tief in 63 Tagen²<br>Median</th><th>Tief in 63 Tagen²<br>schlimmster Fall</th></tr></thead><tbody id="stats"></tbody></table></div><p id="hist-note" class="explainer"></p>
+<details class="archive" id="archive"><summary>Einzelne Signale ansehen</summary><p class="archive-top">Jüngste Signale zuerst. Offene Zeitfenster erscheinen als Strich.</p><div class="scroll"><table aria-label="Einzelne historische Signale"><thead><tr><th>Datum</th><th>Signal</th><th>Score</th><th>Nach 21 Tagen</th><th>Nach 63 Tagen</th><th>Tief in 63 Tagen²</th></tr></thead><tbody id="eps"></tbody></table></div></details>
+</section>
+__CONTEXT_BLOCK__
+<section class="methods card inset" id="methodik"><details id="method-detail"><summary>Berechnung, Datenquellen und Aktualisierung</summary><div class="method-grid"><div><h3>Washout-Score</h3><p id="method-score"></p></div><div><h3>Erholungsmeldung</h3><p id="method-trend"></p></div><div><h3>Historische Auswertung</h3><p id="method-stats"></p></div><div><h3>Datenquellen</h3><ul id="sources" class="source-list"></ul></div></div></details></section>
+<footer class="foot"><span id="footer"></span><a href="#chart-title">Zurück zum Kurs ↑</a></footer>
+</main>
+<noscript><p>Für die interaktive Auswertung bitte JavaScript im Browser aktivieren.</p></noscript>
+<script id="market-data" type="application/json">__MARKET_DATA__</script>
+<script>
+"use strict";
+(() => {
+const byId = id => document.getElementById(id);
+const el = (name, cls, content) => {
+  const node = document.createElement(name);
+  if (cls) node.className = cls;
+  if (content !== undefined) node.textContent = String(content);
+  return node;
+};
+const put = (id, text) => { byId(id).textContent = text; };
+let payload = {};
+try { payload = JSON.parse(byId("market-data").textContent) || {}; } catch (_) {}
+const meta = payload.meta || {};
+const day = payload.last || {};
+const method = payload.method || {};
+const history = Array.isArray(payload.timeline) ? payload.timeline : [];
+const records = Array.isArray(payload.events) ? payload.events : [];
+const cases = Array.isArray(payload.backtest) ? payload.backtest : [];
+const episodes = Array.isArray(payload.backtestEpisodes) ? payload.backtestEpisodes : (payload.episodeRows || []);
+const num = x => typeof x === "number" && Number.isFinite(x);
+const formatters = new Map();
+function decimal(x, digits=1) {
+  if (!num(x)) return "–";
+  if (!formatters.has(digits)) formatters.set(digits, new Intl.NumberFormat("de-DE", {minimumFractionDigits:digits, maximumFractionDigits:digits}));
+  return formatters.get(digits).format(Object.is(x,-0) ? 0 : x).replace("-","−");
+}
+const pct = (x, signed=false) => num(x) ? (signed && x>0?"+":"") + decimal(x) + " %" : "–";
+const humanDate = d => typeof d === "string" && /^\d{4}-\d{2}-\d{2}$/.test(d) ? d.slice(8) + "." + d.slice(5,7) + "." + d.slice(0,4) : "–";
+const assets = {spx:"S&P 500",qqq:"QQQ",iwm:"IWM",vix:"VIX"};
+const kindLabels = {watch:"Beobachtung",washout:"Washout",recovery:"Erholung","≥3":"Ab 3 Punkten","≥4":"Ab 4 Punkten","Erholung":"Erholung"};
+const shortLabel = kind => kindLabels[kind] || "Signal";
+const dash = x => x === undefined || x === null ? "–" : x;
+const onLocalhost = ["127.0.0.1","localhost","[::1]"].includes(location.hostname) && ["http:","https:"].includes(location.protocol);
+byId("refresh").hidden = !onLocalhost;
+byId("method-link").addEventListener("click",() => { byId("method-detail").open = true; });
+let warnings = (Array.isArray(meta.warnings) ? meta.warnings : []).filter(s => typeof s === "string" && s.trim());
+const confirmedDate = meta.common_session;
+let freshText;
+if (!day.date) freshText = "Keine Kursdaten";
+else if (meta.fresh) freshText = (onLocalhost ? "Schlussstand " : "Gespeicherter Schlussstand ") + humanDate(day.date);
+else if (confirmedDate) freshText = "Letzter gemeinsamer Stand " + humanDate(confirmedDate);
+else freshText = "Daten unvollständig";
+if (meta.cache_only && day.date) freshText += " · Cache";
+put("fresh", freshText);
+byId("fresh").classList.toggle("bad", !meta.fresh);
+if (!day.date || (!meta.fresh && meta.expected_session) || warnings.length) {
+  const notices = [];
+  if (!day.date) notices.push("Für die Berechnung fehlen Handelstage. Bitte die Daten erneut abrufen.");
+  else if (!meta.fresh && meta.expected_session) notices.push("Für den erwarteten Handelstag " + humanDate(meta.expected_session) + " sind aktuelle Daten nicht vollständig bestätigt.");
+  if (warnings.length) notices.push(warnings.join(" · "));
+  put("notice", notices.join(" "));
+  byId("notice").hidden = false;
+}
+const flags = Array.isArray(day.rules) ? day.rules : [];
+const known = flags.filter(f=>typeof f === "boolean").length;
+const score = day.score;
+put("score",num(score)?score:"–");
+const bars = byId("meter");
+for(let i=0;i<6;i++) bars.append(el("span", num(score) ? (i<score?"on":"") : "unknown"));
+let heading, explanation;
+if (!num(score)) {
+  heading="Daten unvollständig"; explanation=known ? known + " von 6 Regeln lassen sich am Stichtag auswerten." : "Für den Score werden S&P-500- und VIX-Schlusskurse benötigt.";
+} else if (score>=4) {
+  heading="Washout-Zone erreicht"; explanation="Die Schwelle für einen möglichen Boden ist erreicht. Weitere Kursverluste bleiben möglich.";
+} else if(score===3) {
+  heading="Bodenbildung beobachten"; explanation="Drei Bedingungen sind erfüllt. Ein weiterer Punkt würde die Washout-Schwelle erreichen.";
+} else {
+  heading="Unter der Washout-Schwelle"; explanation=score===0?"Am Stichtag erfüllt der S&P 500 keine der sechs Stressbedingungen.":(4-score)+" weitere "+(4-score===1?"Bedingung würde":"Bedingungen würden")+" die Washout-Schwelle auslösen.";
+}
+put("status-title",heading);put("status-desc",explanation);
+put("quote",num(day.spx)?decimal(day.spx,2):"–");
+const rs = [
+ ["Überverkaufter S&P 500","Wilder-RSI (14) ≤ 30",decimal(day.rsi)],
+ ["Abstand zur 200-Tage-Linie","S&P 500 mindestens 10 % unter dem Durchschnitt",pct(day.spx_gap,true)],
+ ["Hohe erwartete Schwankung","VIX ≥ 30 Punkte",decimal(day.vix)],
+ ["Verkaufsdruck über fünf Tage","Summe der Tages-Sigmas ≤ −2,5",num(day.sigma5)?decimal(day.sigma5,2)+" σ":"–"],
+ ["Gehäufte Verlusttage","Mindestens 3 Tage mit ≤ −2 σ in 20 Handelstagen",num(day.cluster)?decimal(day.cluster,0)+" Tage":"–"],
+ ["Angstprämie im VIX","VIX ≥ 30 und realisierte 20-Tage-Volatilität / VIX ≤ 0,70",num(day.vol_ratio)?decimal(day.vol_ratio,2)+"×":"–"],
+];
+rs.forEach(([title,threshold,value], idx) => {
+  const tr = el("div","rule"), flag = flags[idx];
+  const marker = el("span","flag "+(flag===true?"on":flag===false?"":"unknown"),flag===true?"✓":flag===false?"−":"?");
+  const status = flag===true?"Erfüllt":flag===false?"Nicht erfüllt":"Fehlende Daten";
+  marker.setAttribute("aria-label",status);marker.title=status;
+  const name=el("div","rule-name",title);name.append(el("small","",threshold));
+  tr.append(marker,name,el("span","rule-value",value));byId("rules").append(tr);
+});
+const above=day.above||{}, sma=day.sma||{}, basketKeys=["spx","qqq","iwm"];
+const valid=basketKeys.filter(k=>typeof above[k] === "boolean").length;
+const over=basketKeys.filter(k=>above[k] === true).length;
+put("trend-count", valid===3?over+" / 3":valid?over+" / "+valid+" messbar":"Daten fehlen");
+let trendHeader="Trenddaten unvollständig", trendCopy="Alle drei Märkte brauchen jeweils 200 Schlusskurse.";
+const activeSetup = day.setup_active === true || (day.setup_active === undefined && day.phase==="washout" && day.setup_date && !day.recovery_date);
+if (valid===3) {
+  if(day.recovery_date && over===3 && (day.phase==="recovery" || day.recovery_live===true)) {
+    trendHeader="Erholung bestätigt";trendCopy="Nach dem Washout vom "+humanDate(day.setup_date)+" schlossen alle drei Märkte am "+humanDate(day.recovery_date)+" wieder über der Linie.";
+  } else if (activeSetup) {
+    trendHeader="Bestätigung steht aus";trendCopy="Der Wächter verfolgt den Washout vom "+humanDate(day.setup_date)+". Die Erholungsmeldung folgt beim gemeinsamen Wiederanstieg.";
+  } else if (over===3) {
+    trendHeader="Drei Märkte über der Linie";trendCopy="Alle drei Trends liegen über dem Durchschnitt. Eine neue Erholungsmeldung setzt einen vorausgegangenen Washout voraus.";
+  } else {
+    trendHeader=over===0?"Alle drei Märkte an oder unter der Linie":over+" von drei Märkten über der Linie";trendCopy="Der Wächter prüft nach einem Washout, wann alle drei Märkte wieder darüber schließen.";
+  }
+}
+put("trend-title",trendHeader);put("trend-desc",trendCopy);
+basketKeys.forEach(k=>{
+  const row=el("div","asset"), f=above[k];
+  const direction=el("span","asset-status "+(f===true?"":f===false?"below":"na"),f===true?"↑":f===false?"↓":"·");
+  direction.setAttribute("aria-label",f===true?"Über SMA200":f===false?"Am oder unter SMA200":"Ohne Vergleich");
+  const title=el("div","asset-name",assets[k]);title.append(el("small","",k==="spx"?"US-Großunternehmen":k==="qqq"?"Nasdaq-100-ETF":"Russell-2000-ETF"));
+  const value=el("div","asset-value",decimal(day[k],2));value.append(el("small","","SMA200 "+decimal(sma[k],2)));
+  row.append(direction,title,value);byId("assets").append(row);
+});
+put("trend-foot",day.recovery_date?"Letzte Erholungsmeldung am "+humanDate(day.recovery_date)+".":
+  day.setup_date?"Letzter Washout am "+humanDate(day.setup_date)+".":"Eine Erholung kann erst nach einem erfassten Washout gemeldet werden.");
+function addCell(row, value, cls) { row.append(el("td",cls,dash(value))); }
+function colored(x) {return x>0?"pos":x<0?"neg":"";}
+function emptyRow(id, span, text) {const cell=el("td","muted",text);cell.colSpan=span;const tr=el("tr");tr.append(cell);byId(id).append(tr);}
+for(const r of cases){
+  const tr=el("tr");addCell(tr,shortLabel(r.label));addCell(tr,r.n);addCell(tr,pct(r.median21,true),colored(r.median21));
+  addCell(tr,num(r.hit21)?decimal(r.hit21,0)+" % ("+r.n21+")":"–");addCell(tr,pct(r.median63,true),colored(r.median63));
+  addCell(tr,num(r.hit63)?decimal(r.hit63,0)+" % ("+r.n63+")":"–");addCell(tr,pct(r.drawdown63),colored(r.drawdown63));addCell(tr,pct(r.worst63),colored(r.worst63));byId("stats").append(tr);
+}
+if (!cases.length) emptyRow("stats",8,"Es liegen noch keine auswertbaren Episoden vor.");
+const observed = history.filter(r=>num(r.score));
+const samplePeriod = observed.length ? "Auswertbare Scores vom "+humanDate(observed[0].date)+" bis "+humanDate(observed[observed.length-1].date)+". " : "";
+put("hist-note",samplePeriod+"¹ Anteil positiver Renditen. Die Klammer zeigt die Zahl auswertbarer Episoden. ² Niedrigster Schlusskurs relativ zum Signalschluss, begrenzt auf 0 %. Alle Zeiträume sind Handelstage.");
+for(const r of [...episodes].sort((a,b)=>String(b.date).localeCompare(String(a.date)))) {
+  const tr=el("tr");addCell(tr,humanDate(r.date));addCell(tr,shortLabel(r.group||r.kind));addCell(tr,r.score);
+  for(const key of ["return21","return63","drawdown63"]) addCell(tr,pct(r[key],key!=="drawdown63"),colored(r[key]));
+  byId("eps").append(tr);
+}
+byId("archive").hidden = !episodes.length;
+put("method-score",[method.rsi,method.sigma,method.volatility].filter(Boolean).join(" ") || "Ein Punkt je erfüllter Bedingung. Die vierte und fünfte Regel verwenden die Volatilitätserwartung des Vortags.");
+put("method-trend",[method.setup,method.recovery].filter(Boolean).join(" ") || "Eine Trendbestätigung folgt auf eine erfasste Washout-Episode, sobald S&P 500, QQQ und IWM ihre 200-Tage-Linie gemeinsam zurückerobern.");
+put("method-stats",[method.backtest,method.gaps].filter(Boolean).join(" ") || "Die Auswertung berücksichtigt nur vollständig beobachtete Zeitfenster.");
+const sourceList=byId("sources"), dataSources=meta.sources||{};
+for (const [key,entry] of Object.entries(dataSources)) {
+  if (!entry) continue;
+  const item=el("li");item.append(document.createTextNode((assets[key]||key)+" · "));
+  const title=typeof entry==="string"?entry:(entry.name||entry.url||"Quelle");
+  const rawUrl = typeof entry==="string"?entry:entry.url;
+  if (typeof rawUrl==="string" && /^https?:\/\/[^\s]+$/i.test(rawUrl)) {
+    const a=el("a","",title);a.href=rawUrl;a.target="_blank";a.rel="noopener noreferrer";item.append(a);
+  } else item.append(document.createTextNode(String(title)));
+  sourceList.append(item);
+}
+if (!sourceList.children.length) sourceList.append(el("li","","Kein Abruf dokumentiert."));
+const videoSource=el("li"), videoLink=el("a","","Video von VisserLabs");
+videoLink.href="https://youtu.be/nMoiy-Mba_4";videoLink.target="_blank";videoLink.rel="noopener noreferrer";
+videoSource.append(document.createTextNode("Vorlage · "),videoLink);sourceList.append(videoSource);
+put("footer",onLocalhost?"Tagesschlussdaten · Über „Daten aktualisieren“ neu abrufen.":"Gespeicherte Ansicht · Zum Aktualisieren den Wächter erneut starten.");
+const chart=byId("chart"), picker=byId("eventpick"), ns="http://www.w3.org/2000/svg";
+function shape(name, attrs, content) {
+  const node=document.createElementNS(ns,name);
+  Object.entries(attrs||{}).forEach(([key,val])=>node.setAttribute(key,String(val)));
+  if (content!==undefined) node.textContent=String(content);
+  return node;
+}
+const indexByDate=new Map(history.map((d,i)=>[d.date,i]));
+const eventsByDate=new Map(records.map(d=>[d.date,d]));
+let range="1", visible=[], selected=null, plot=null;
+const palette={watch:"#aa761c",washout:"#ae5137",recovery:"#156552"};
+function includeRange(date, lastDate) {
+  if (range==="all") return true;
+  const floor=new Date(lastDate+"T12:00:00Z");
+  if (!Number.isFinite(floor.getTime())) return true;
+  floor.setUTCFullYear(floor.getUTCFullYear()-Number(range));
+  return date>=floor.toISOString().slice(0,10);
+}
+function changeRange() {
+  const end=history.length?history[history.length-1].date:null;
+  visible=end?history.filter(d=>includeRange(d.date,end)):[];
+  const selectedWasVisible=selected && visible.some(v=>v.date===selected);
+  if(!selectedWasVisible) selected=null;
+  picker.replaceChildren(el("option","","Signal auswählen"));picker.options[0].value="";
+  const start=visible.length?visible[0].date:null;
+  const shownEvents=records.filter(e=>start && e.date>=start && e.date<=end && num(history[indexByDate.get(e.date)]?.spx));
+  for (const e of shownEvents.slice().reverse()) {
+    const opt=el("option","",humanDate(e.date)+" · "+shortLabel(e.kind));opt.value=e.date;picker.append(opt);
+  }
+  picker.disabled=!shownEvents.length;
+  if (picker.disabled) picker.options[0].textContent="Keine Signale im Zeitraum";
+  if (selected && eventsByDate.has(selected)) picker.value=selected;
+  for (const btn of byId("ranges").querySelectorAll("button")) btn.setAttribute("aria-pressed",String(btn.dataset.range===range));
+  renderChart();
+}
+function drawSelection(index, showDetails=true) {
+  const layer=chart.querySelector("#selected-point");
+  if (!plot||!layer) return;
+  layer.replaceChildren();
+  const d=visible[index];
+  if (!d||!num(d.spx)) {
+    put("inspector",d?humanDate(d.date)+" · Schlusskurs fehlt.":"Kursstelle oder historisches Signal auswählen.");return;
+  }
+  const x=plot.x(index), y=plot.y(d.spx);
+  layer.append(
+    shape("line",{x1:x,x2:x,y1:plot.top,y2:plot.bottom,stroke:"#708078","stroke-width":1,"stroke-dasharray":"3 4"}),
+    shape("circle",{cx:x,cy:y,r:4,fill:"#fffef6",stroke:"#234838","stroke-width":2})
+  );
+  if(!showDetails) return;
+  const event=eventsByDate.get(d.date), parts=[humanDate(d.date),decimal(d.spx,2)+" Punkte",num(d.score)?"Score "+d.score+"/6":"Score offen"];
+  if(event) {
+    parts.push(shortLabel(event.kind));
+    const fullIndex=indexByDate.get(d.date), next=history.slice(fullIndex+1,fullIndex+64);
+    if (next.length===63 && next.every(v=>num(v.spx))) {
+      const min=Math.min(d.spx,...next.map(v=>v.spx));
+      parts.push("Folgetief (63 Tage) "+pct(100*(min/d.spx-1)));
+    } else parts.push("63-Tage-Folgetief offen");
+  }
+  put("inspector",parts.join(" · "));
+}
+function renderChart() {
+  chart.replaceChildren();plot=null;
+  const prices=visible.map(d=>d.spx).filter(num);
+  byId("chart-empty").hidden=prices.length>0;
+  if(!prices.length) {put("inspector","");return;}
+  const w=Math.max(220,Math.round(chart.getBoundingClientRect().width)), h=Math.max(170,Math.round(chart.getBoundingClientRect().height));
+  chart.setAttribute("viewBox","0 0 "+w+" "+h);
+  const left=w<350?40:48, right=8, top=12, bottom=h-25, pw=w-left-right;
+  const isLog=range==="all" && prices.every(v=>v>0);
+  const averages=visible.map(d=>d.sma?.spx).filter(num);
+  const naturalMin=Math.min(...prices,...averages), naturalMax=Math.max(...prices,...averages);
+  const tr=v=>isLog?Math.log(v):v;
+  const inverse=v=>isLog?Math.exp(v):v;
+  const low=tr(naturalMin), high=tr(naturalMax);
+  const buffer = ((high-low)||Math.max(Math.abs(low)*0.025,0.005))*.12;
+  const lo=low-buffer, hi=high+buffer;
+  const y=v=>top+(hi-tr(v))/(hi-lo)*(bottom-top);
+  const x=i=>left+(visible.length===1?pw/2:i/(visible.length-1)*pw);
+  plot={x,y,top,bottom,left,pw,w};
+  for(let k=0;k<=3;k++) {
+    const yy=top+k*(bottom-top)/3;
+    const tick=decimal(inverse(hi-(hi-lo)*k/3),0);
+    chart.append(shape("line",{x1:left,x2:w-right,y1:yy,y2:yy,stroke:"#e2e7de","stroke-width":1}),
+      shape("text",{x:left-7,y:yy+3,fill:"#627468","text-anchor":"end","font-family":"sans-serif","font-size":10},tick));
+  }
+  const ticks = w>550?5:w>325?4:3;
+  const firstDate=visible[0].date,lastDate=visible[visible.length-1].date;
+  const multiYear=Number(lastDate.slice(0,4))-Number(firstDate.slice(0,4))>3;
+  const marked=new Set();
+  for(let j=0;j<ticks;j++){
+    const i=Math.round(j/(ticks-1)*(visible.length-1));
+    if(marked.has(i)) continue; marked.add(i);
+    const date=visible[i].date;
+    const label=multiYear?date.slice(0,4):date.slice(5,7)+"/"+date.slice(2,4);
+    chart.append(shape("text",{x:x(i),y:h-7,fill:"#627468","font-family":"sans-serif","font-size":10,
+        "text-anchor":j===0?"start":j===ticks-1?"end":"middle"},label));
+  }
+  if(averages.length) {
+    let meanPath="",joined=false;
+    visible.forEach((d,i)=>{
+      const mean=d.sma?.spx;
+      if(!num(mean)) {joined=false;return;}
+      meanPath+=(joined?"L":"M")+x(i).toFixed(1)+" "+y(mean).toFixed(1)+" ";joined=true;
+    });
+    chart.append(shape("path",{d:meanPath,fill:"none",stroke:"#788b7e","stroke-width":1.2,"stroke-dasharray":"4 4"}));
+  }
+  let seg="",active=false,points=0;
+  visible.forEach((d,i)=>{
+    if(!num(d.spx)) {active=false;return;}
+    points++;seg+=(active?"L":"M")+x(i).toFixed(1)+" "+y(d.spx).toFixed(1)+" ";active=true;
+  });
+  chart.append(shape("path",{d:seg,fill:"none",stroke:"#275746","stroke-linejoin":"round","stroke-linecap":"round","stroke-width":range==="all"?1.4:1.7}));
+  if(points===1) {
+    const i=visible.findIndex(d=>num(d.spx));chart.append(shape("circle",{cx:x(i),cy:y(visible[i].spx),r:3,fill:"#275746"}));
+  }
+  const keyed=new Map(visible.map((d,i)=>[d.date,i]));
+  const pointSize=range==="all"?3.1:3.8;
+  for(const event of records) {
+    const i=keyed.get(event.date);if(i===undefined||!num(visible[i].spx))continue;
+    const xp=x(i),yp=y(visible[i].spx);
+    const attrs={fill:palette[event.kind]||"#777",stroke:"#fffef8","stroke-width":1.15};
+    const marker=event.kind==="recovery"?
+      shape("path",{...attrs,d:"M "+xp+" "+(yp-pointSize-1)+" l "+(pointSize+1)+" "+(pointSize+1)+" l "+(-pointSize-1)+" "+(pointSize+1)+" l "+(-pointSize-1)+" "+(-pointSize-1)+" Z"}):
+      shape("circle",{...attrs,cx:xp,cy:yp,r:pointSize});
+    marker.append(shape("title",{},humanDate(event.date)+" · "+shortLabel(event.kind)));
+    marker.style.cursor="pointer";marker.addEventListener("click",e=>{e.stopPropagation();selectDate(event.date);});chart.append(marker);
+  }
+  chart.append(shape("g",{id:"selected-point","pointer-events":"none"}));
+  const selectedIndex=selected?keyed.get(selected):undefined;
+  if(selectedIndex!==undefined) drawSelection(selectedIndex);
+  else put("inspector","Kursstelle oder historisches Signal auswählen."+(isLog?" Logarithmische Skala.":""));
+}
+function selectDate(date) {
+  const i=visible.findIndex(d=>d.date===date);if(i<0)return;
+  selected=date;picker.value=eventsByDate.has(date)?date:"";drawSelection(i);
+}
+byId("ranges").addEventListener("click",e=>{
+  const btn=e.target.closest("button");if(!btn||btn.dataset.range===range)return;
+  range=btn.dataset.range;changeRange();
+});
+picker.addEventListener("change",()=>{
+  if(picker.value)selectDate(picker.value);
+  else{selected=null;renderChart();}
+});
+chart.addEventListener("click",e=>{
+  if(!plot||!visible.length)return;
+  const rect=chart.getBoundingClientRect(), px=e.clientX-rect.left;
+  if(px<plot.left || px>plot.left+plot.pw)return;
+  const i=Math.min(visible.length-1,Math.max(0,Math.round((px-plot.left)/plot.pw*(visible.length-1))));
+  selectDate(visible[i].date);
+});
+chart.addEventListener("keydown",e=>{
+  if(!visible.length||!["ArrowLeft","ArrowRight","Home","End","Escape"].includes(e.key))return;
+  e.preventDefault();
+  if(e.key==="Escape"){selected=null;picker.value="";renderChart();return;}
+  const previous=selected?visible.findIndex(d=>d.date===selected):visible.length-1;
+  let i=e.key==="Home"?0:e.key==="End"?visible.length-1:previous+(e.key==="ArrowLeft"?-1:1);
+  i=Math.max(0,Math.min(visible.length-1,i));selectDate(visible[i].date);
+});
+changeRange();
+if(typeof ResizeObserver==="function") new ResizeObserver(renderChart).observe(chart.parentElement);
+else window.addEventListener("resize",renderChart);
+})();
+</script>
+</body></html>
